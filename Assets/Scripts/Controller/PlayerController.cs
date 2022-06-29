@@ -73,7 +73,7 @@ public class PlayerController
         foreach (var controller in parentHandler.GetEnemyControllers())
         {
             if (Vector3.Distance(controller.model.PosNRotation.AsVector3(), this.model.PosNRotation.AsVector3()) < 1f)
-            {
+            {                
                 controller.DestroyView();
                 parentHandler.GetEnemyControllers().Remove(controller);
                 return true;

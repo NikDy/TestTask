@@ -48,7 +48,7 @@ public class GameHandler : MonoBehaviour
     void Start()
     {
         SetBeginScreen();
-        playerModel = new PlayerModel(new Vector4(0, 0, 0, 0), 0, playerLives, playerSpeed);
+        playerModel = new PlayerModel(new Vector4(-10, 0, 0, 0), 0, playerLives, playerSpeed);
         var playerInput = gameObject.AddComponent(Type.GetType("PlayerInput"));
         enemySpawner = gameObject.AddComponent<EnemySpawner>();
         enemySpawner.Init(this, playerModel);

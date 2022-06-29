@@ -23,7 +23,7 @@ public class FoodSpawner : MonoBehaviour
         var view = Instantiate(parentHandler.FoodPrefab);
         view.AddComponent<FoodView>();
         foodInstances.Add(view);
-        var startPos = new Vector4(Random.Range(-3.5f, 3.5f),
+        var startPos = new Vector4(Random.Range(-3.5f - 10f, 3.5f - 10f),
                                    Random.Range(-5.5f, 5.5f),
                                    0f,
                                    0f);

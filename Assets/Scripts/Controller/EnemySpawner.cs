@@ -20,10 +20,10 @@ public class EnemySpawner : MonoBehaviour
 
     public EnemyController SpawnNewEnemy()
     {
-        var view = Instantiate(parentHandler.EnemyPrefab);
+        var view = Instantiate(parentHandler.EnemyPrefab);        
         view.AddComponent<EnemyView>();
         enemyInstances.Add(view);
-        var startPos = new Vector4(Random.Range(-3.5f, 3.5f),
+        var startPos = new Vector4(Random.Range(-3.5f - 10f, 3.5f - 10f),
                                    Random.Range(-5.5f, 5.5f),
                                    0f,
                                    0f);

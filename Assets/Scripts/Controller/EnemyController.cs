@@ -21,8 +21,8 @@ public class EnemyController
         this.parentHandler = parentHandler;
         this.playerModel = playerModel;
 
-        this.parentHandler.MoveUpdate += NextMove;
         view.SetPosition(this.model.PosNRotation);
+        this.parentHandler.MoveUpdate += NextMove;
         view.GetComponent<SpriteRenderer>().enabled = true;
     }
 
@@ -42,7 +42,7 @@ public class EnemyController
         if (Vector3.Distance(model.PosNRotation.AsVector3(), model.target.AsVector3()) >= model.moveStep && view.isActiveAndEnabled) { }
         else
         {
-            model.target = new Vector4(Random.Range(-3.5f, 3.5f),
+            model.target = new Vector4(Random.Range(-3.5f - 10f, 3.5f - 10f),
                                        Random.Range(-5.5f, 5.5f),
                                        model.PosNRotation.z,
                                        model.PosNRotation.r);
@@ -54,7 +54,7 @@ public class EnemyController
 
     public void DestroyView()
     {
-        this.parentHandler.MoveUpdate -= NextMove;
+        this.parentHandler.MoveUpdate -= NextMove;        
         GameObject.Destroy(view.gameObject);        
     }
 }
