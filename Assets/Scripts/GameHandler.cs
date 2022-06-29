@@ -175,7 +175,7 @@ public class GameHandler : MonoBehaviour
     }
 
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (currentGameste == GAMESTATE.INGAME)
         {
